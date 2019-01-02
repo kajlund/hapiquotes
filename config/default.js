@@ -1,0 +1,24 @@
+/**
+ * Created by LuKa on 2019-01-02.
+ * Default i.e. development configuration
+ */
+
+'use strict';
+
+const pack = require('../package.json');
+
+module.exports = {
+    client: {
+        name: pack.name,
+        description: pack.description,
+        version: pack.version
+    },
+    webserver: {
+        cors: true, // Cross-Origin Resource Sharing ability (true/false)
+        env: '$NODE_ENV',
+        https: false,
+        port: '$PORT::number',
+        publicFolder: '',
+        tls: false
+    }
+};

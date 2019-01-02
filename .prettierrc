@@ -1,0 +1,7 @@
+{
+    "arrowParens": "avoid",
+    "parser": "flow",
+    "printWidth": 120,
+    "singleQuote": true,
+    "tabWidth": 4
+}
