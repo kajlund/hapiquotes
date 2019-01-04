@@ -13,8 +13,8 @@
       "impliedStrict ": true
     }
   },
-  "extends": ["plugin:prettier/recommended"],
-  "plugins": ["prettier"],
+  "extends": ["eslint:recommended", "plugin:prettier/recommended"],
+  "plugins": ["promise", "prettier"],
   "rules": {
     "prettier/prettier": "error"
   }

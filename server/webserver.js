@@ -26,7 +26,7 @@ const manifest = {
         }
     },
     register: {
-        plugins: [{ plugin: './website', options: Config }]
+        plugins: [{ plugin: require('inert') }, { plugin: require('vision') }, { plugin: './website', options: Config }]
     }
 };
 

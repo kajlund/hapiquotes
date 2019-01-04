@@ -8,9 +8,9 @@
 /* Import dependencies */
 const { expect } = require('code');
 const Lab = require('lab');
-const { after, before, describe, it } = (exports.lab = Lab.script());
+const { describe, it } = (exports.lab = Lab.script());
 
-const server = require('../server/webserver');
+// const server = require('../server/webserver');
 
 /* Sanity Test Suite */
 describe('Sanity tests', () => {
