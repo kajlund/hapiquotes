@@ -4,7 +4,7 @@
   "description": "A social quotes sharing app.",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint \"./**/*.js\"",
+    "lint": "standard",
     "test": "lab"
   },
   "keywords": [],
@@ -12,15 +12,8 @@
   "license": "ISC",
   "devDependencies": {
     "code": "^5.2.4",
-    "eslint": "^5.11.1",
-    "eslint-config-prettier": "^3.3.0",
-    "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-node": "^8.0.1",
-    "eslint-plugin-prettier": "^3.0.1",
-    "eslint-plugin-promise": "^4.0.1",
-    "eslint-plugin-standard": "^4.0.0",
     "lab": "^18.0.1",
-    "prettier": "^1.15.3"
+    "standard": "^12.0.1"
   },
   "dependencies": {
     "getconfig": "^4.5.0",
