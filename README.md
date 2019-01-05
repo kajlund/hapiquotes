@@ -20,9 +20,9 @@ A social quotes sharing app.
   * [x] Create HelloWorld server
   * [x] Add vscode run/debug settings
   * [x] Commit, Create remote repo and push
-  * Add hapi code to setup basic sever with logging and template rendering
-  * Add starting layout templates, css and images
-  * Commit and push
+  * [x] Add hapi code to setup basic sever with logging and template rendering
+  * [x] Add starting layout templates, css and images
+  * [x] Commit and push
   * Setup Continuous Integration
   * Add 404-page for faulty routes
   * Setup initial workable data model

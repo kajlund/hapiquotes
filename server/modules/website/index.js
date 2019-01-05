@@ -90,9 +90,45 @@ const register = async (server, config) => {
             path: '/',
             handler: (request, h) => {
                 return h.view('index', {
-                    topQuotes,
+                    quotes: topQuotes,
                     pageTitle: 'Welcome!'
                 });
+            }
+        },
+        {
+            method: 'GET',
+            path: '/js/{path*}',
+            config: {
+                plugins: {
+                    'hapi-auth-cookie': {
+                        redirectTo: false
+                    }
+                },
+                handler: { directory: { path: './public/js' } }
+            }
+        },
+        {
+            method: 'GET',
+            path: '/css/{path*}',
+            config: {
+                plugins: {
+                    'hapi-auth-cookie': {
+                        redirectTo: false
+                    }
+                },
+                handler: { directory: { path: './public/css' } }
+            }
+        },
+        {
+            method: 'GET',
+            path: '/img/{path*}',
+            config: {
+                plugins: {
+                    'hapi-auth-cookie': {
+                        redirectTo: false
+                    }
+                },
+                handler: { directory: { path: './public/img' } }
             }
         }
     ]);
