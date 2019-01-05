@@ -7,16 +7,17 @@
 
 /* eslint no-console: 0 */
 
+
+let server = undefined;
+
 const webserver = require('./server/webserver.js')
 
 // Compose and start website server
 const start = async () => {
-  const srv = await webserver.compose()
-  await srv.start()
-  srv.log('info', `Server started at ${srv.info.uri}`)
+  server = await webserver.compose()
+  await server.start()
+  server.log('info', `Server started at ${server.info.uri}`)
 }
-
-start()
 
 process.on('uncaughtException', err => {
   console.error('Caught unhandled exception', err.message || err)
@@ -33,3 +34,13 @@ process.on('unhandledRejection', (err, p) => {
   }
   process.exit(1)
 })
+
+// listen on SIGINT signal and gracefully stop the server
+process.on('SIGINT', async () => {
+  console.log('Stopping hapi server')
+  const err = await server.stop({ timeout: 10000 })
+  console.log('Hapi server stopped')
+  process.exit((err) ? 1 : 0)
+})
+
+start()
