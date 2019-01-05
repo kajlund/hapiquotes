@@ -4,8 +4,10 @@
   "description": "A social quotes sharing app.",
   "main": "index.js",
   "scripts": {
+    "lab": "lab",
     "lint": "standard",
-    "test": "lab"
+    "start": "node index",
+    "test": "npm-run-all lint lab"
   },
   "keywords": [],
   "author": "",
@@ -13,6 +15,7 @@
   "devDependencies": {
     "code": "^5.2.4",
     "lab": "^18.0.1",
+    "npm-run-all": "^4.1.5",
     "standard": "^12.0.1"
   },
   "dependencies": {
