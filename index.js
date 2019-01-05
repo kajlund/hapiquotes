@@ -7,8 +7,7 @@
 
 /* eslint no-console: 0 */
 
-
-let server = undefined;
+let server
 
 const webserver = require('./server/webserver.js')
 
