@@ -24,6 +24,7 @@
     "good": "^8.1.1",
     "good-console": "^7.1.0",
     "good-squeeze": "^5.1.0",
+    "handlebars": "^4.0.12",
     "hapi": "^17.8.1",
     "inert": "^5.1.2",
     "vision": "^5.4.4"
