@@ -14,7 +14,7 @@ module.exports = {
     version: pack.version
   },
   webserver: {
-    cors: true, // Cross-Origin Resource Sharing ability (true/false)
+    cors: false, // Cross-Origin Resource Sharing ability (true/false)
     env: '$NODE_ENV',
     https: false,
     port: '$PORT::number',
