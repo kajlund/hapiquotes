@@ -21,6 +21,9 @@
   "dependencies": {
     "getconfig": "^4.5.0",
     "glue": "^5.0.0",
+    "good": "^8.1.1",
+    "good-console": "^7.1.0",
+    "good-squeeze": "^5.1.0",
     "hapi": "^17.8.1",
     "inert": "^5.1.2",
     "vision": "^5.4.4"

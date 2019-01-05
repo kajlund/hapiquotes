@@ -14,6 +14,22 @@ if (!Config.webserver) {
   throw new Error('No webserver configured')
 }
 
+const opts = {
+  reporters: {
+    consoleReporter: [
+      {
+        module: 'good-squeeze',
+        name: 'Squeeze',
+        args: [ { log: '*', response: '*', request: '*' } ]
+      },
+      {
+        module: 'good-console'
+      },
+      'stdout'
+    ]
+  }
+}
+
 const rootDir = path.join(process.cwd(), 'server', 'modules')
 
 const manifest = {
@@ -26,7 +42,12 @@ const manifest = {
     }
   },
   register: {
-    plugins: [{ plugin: require('inert') }, { plugin: require('vision') }, { plugin: './website', options: Config }]
+    plugins: [
+      { plugin: require('good'), options: opts },
+      { plugin: require('inert') },
+      { plugin: require('vision') },
+      { plugin: './website', options: Config }
+    ]
   }
 }
 
