@@ -19,6 +19,7 @@
     "standard": "^12.0.1"
   },
   "dependencies": {
+    "boom": "^7.3.0",
     "getconfig": "^4.5.0",
     "glue": "^5.0.0",
     "good": "^8.1.1",

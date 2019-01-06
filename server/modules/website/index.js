@@ -7,6 +7,8 @@
 
 const Path = require('path')
 
+const Boom = require('boom')
+
 const name = 'website'
 const version = '1.0.0'
 
@@ -129,6 +131,22 @@ const register = async (server, config) => {
           }
         },
         handler: { directory: { path: './public/img' } }
+      }
+    },
+    // Anything else gets a 404
+    {
+      method: ['GET', 'POST'],
+      path: '/{path*}',
+      config: {
+        handler: (request, h) => {
+          const accept = request.headers.accept
+
+          if (accept && accept.match(/json/)) {
+            return Boom.notFound('Resource not found.')
+          }
+
+          return h.view('404').code(404)
+        }
       }
     }
   ])

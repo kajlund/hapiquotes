@@ -23,8 +23,8 @@ A social quotes sharing app.
   * [x] Add hapi code to setup basic sever with logging and template rendering
   * [x] Add starting layout templates, css and images
   * [x] Commit and push
-  * Setup Continuous Integration
-  * Add 404-page for faulty routes
+  * [x] Setup Continuous Integration
+  * [x] Add 404-page for faulty routes
   * Setup initial workable data model
   * Add DB seed/clean functionality
   * Display top 5 random Quotes
