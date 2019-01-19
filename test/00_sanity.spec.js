@@ -3,24 +3,24 @@
  * Sanity Tests
  */
 
-'use strict'
+"use strict"
 
 /* Import dependencies */
-const { expect } = require('code')
-const Lab = require('lab')
+const { expect } = require("code")
+const Lab = require("lab")
 const { describe, it } = (exports.lab = Lab.script())
 
-// const server = require('../server/webserver');
+// const server = require("../server/webserver");
 
 /* Sanity Test Suite */
-describe('Sanity tests', () => {
+describe("Sanity tests", () => {
   // Test that Lab is available
-  describe('Lab', () => {
-    it('exists', () => {
+  describe("Lab", () => {
+    it("exists", () => {
       expect(Lab).to.exist()
     })
 
-    it('has properties', () => {
+    it("has properties", () => {
       expect(Object.keys(Lab)).to.not.be.empty()
     })
   })

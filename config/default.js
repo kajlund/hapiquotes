@@ -3,9 +3,9 @@
  * Default i.e. development configuration
  */
 
-'use strict'
+"use strict"
 
-const pack = require('../package.json')
+const pack = require("../package.json")
 
 module.exports = {
   client: {
@@ -15,10 +15,10 @@ module.exports = {
   },
   webserver: {
     cors: false, // Cross-Origin Resource Sharing ability (true/false)
-    env: '$NODE_ENV',
+    env: "$NODE_ENV",
     https: false,
-    port: '$PORT::number',
-    publicFolder: '',
+    port: "$PORT::number",
+    publicFolder: "",
     tls: false
   }
 }
