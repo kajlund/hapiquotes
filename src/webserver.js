@@ -30,7 +30,7 @@ const opts = {
   }
 }
 
-const rootDir = path.join(process.cwd(), 'server', 'modules')
+const rootDir = path.join(__dirname, 'modules')
 
 const manifest = {
   server: {

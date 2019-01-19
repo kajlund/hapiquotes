@@ -9,7 +9,7 @@
 
 let server
 
-const webserver = require('./server/webserver.js')
+const webserver = require('./src/webserver.js')
 
 // Compose and start website server
 const start = async () => {
