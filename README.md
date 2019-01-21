@@ -25,7 +25,7 @@ A social quotes sharing app.
   * [x] Commit and push
   * [x] Setup Continuous Integration
   * [x] Add 404-page for faulty routes
-  * Setup initial workable data model
+  * [x] Setup initial workable data model
   * Add DB seed/clean functionality
   * Display top 5 random Quotes
 * As a User, I need to be able to find a certain quote based on content or author

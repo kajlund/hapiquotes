@@ -7,6 +7,7 @@
 
 const path = require("path")
 
+const Boom = require("boom")
 const Config = require("getconfig")
 const Glue = require("glue")
 
@@ -38,7 +39,13 @@ const manifest = {
     port: Config.webserver.port,
     tls: Config.webserver.tls,
     routes: {
-      cors: Config.webserver.cors
+      cors: Config.webserver.cors,
+      validate: {
+        failAction: (request, h, error) => {
+          request.log("error", `Validation failure: ${error.message}`)
+          throw Boom.badRequest(error.message)
+        }
+      }
     }
   },
   register: {
@@ -46,6 +53,12 @@ const manifest = {
       { plugin: require("good"), options: opts },
       { plugin: require("inert") },
       { plugin: require("vision") },
+      {
+        plugin: require("hapi-dev-errors"),
+        options: {
+          showErrors: Config.webserver.env === "development"
+        }
+      },
       { plugin: "./db", options: Config.db },
       { plugin: "./services" },
       { plugin: "./website", options: Config }
