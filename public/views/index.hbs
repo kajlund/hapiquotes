@@ -2,11 +2,24 @@
   <div class="container is-fluid">
     <div class="notification">
       <h1 class="title">{{pageTitle}}</h1>
-      <ul>
-        {{#each quotes}}
-        <li>{{author}}</li>
-        {{/each}}
-      </ul>
+      <div id="carouselContent" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner" role="listbox">
+          {{#each quotes}}
+              <div class="carousel-item text-center p-4 active">
+              <p>{{content}}</p>
+              <p>- {{author}}</p>
+            </div>
+          {{/each}}
+        </div>
+        <a class="carousel-control-prev" href="#carouselContent" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselContent" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+      </div>
     </div>
   </div>
 </section>

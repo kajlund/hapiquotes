@@ -24,6 +24,7 @@
     "standard": "^12.0.1"
   },
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "boom": "^7.3.0",
     "getconfig": "^4.5.0",
     "glue": "^5.0.0",
@@ -33,6 +34,9 @@
     "handlebars": "^4.0.12",
     "hapi": "^17.8.1",
     "inert": "^5.1.2",
+    "mongoose": "^5.4.5",
+    "mongoose-seed": "^0.5.1",
+    "validator": "^10.11.0",
     "vision": "^5.4.4"
   }
 }

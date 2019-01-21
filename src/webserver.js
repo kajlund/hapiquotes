@@ -46,6 +46,8 @@ const manifest = {
       { plugin: require("good"), options: opts },
       { plugin: require("inert") },
       { plugin: require("vision") },
+      { plugin: "./db", options: Config.db },
+      { plugin: "./services" },
       { plugin: "./website", options: Config }
     ]
   }
