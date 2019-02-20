@@ -13,18 +13,25 @@
       "impliedStrict ": true
     }
   },
-  "extends": ["eslint:recommended", "prettier"],
-  "plugins": ["prettier"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:prettier/recommended"
+  ],
   "rules": {
     "prettier/prettier": [
-      "error", {
+      "error",
+      {
         "printWidth": 120,
-        "semi": false
+        "semi": false,
+        "tabWidth": 2
       }
     ],
     "no-unused-vars": [
-      "error", {
-        "vars": "all", "args": "after-used", "ignoreRestSiblings": true
+      "error",
+      {
+        "vars": "all",
+        "args": "after-used",
+        "ignoreRestSiblings": true
       }
     ],
     "no-console": "off"

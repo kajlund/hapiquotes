@@ -8,8 +8,11 @@
       "type": "node",
       "request": "launch",
       "name": "Launch Server",
-      "program": "${workspaceFolder}\\index.js",
-      "console": "integratedTerminal"
+      "program": "${workspaceFolder}/server/index.js",
+      "console": "integratedTerminal",
+      "env": {
+        "NODE_ENV": "development"
+      }
     }
   ]
 }

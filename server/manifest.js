@@ -1,39 +1,19 @@
 /**
  * Created by LuKa on 2019-01-02.
- * Export compose function for website server setup.
+ * Application Manifest
  */
 
 "use strict"
 
-const path = require("path")
-
 const Boom = require("boom")
 const Config = require("getconfig")
-const Glue = require("glue")
+const Log = require("consola")
 
 if (!Config.webserver) {
   throw new Error("No webserver configured")
 }
 
-const opts = {
-  reporters: {
-    consoleReporter: [
-      {
-        module: "good-squeeze",
-        name: "Squeeze",
-        args: [{ log: "*", response: "*", request: "*" }]
-      },
-      {
-        module: "good-console"
-      },
-      "stdout"
-    ]
-  }
-}
-
-const rootDir = path.join(__dirname, "modules")
-
-const manifest = {
+module.exports = {
   server: {
     app: Config,
     port: Config.webserver.port,
@@ -42,7 +22,7 @@ const manifest = {
       cors: Config.webserver.cors,
       validate: {
         failAction: (request, h, error) => {
-          request.log("error", `Validation failure: ${error.message}`)
+          Log.error("Validation failure", error)
           throw Boom.badRequest(error.message)
         }
       }
@@ -50,7 +30,6 @@ const manifest = {
   },
   register: {
     plugins: [
-      { plugin: require("good"), options: opts },
       { plugin: require("inert") },
       { plugin: require("vision") },
       {
@@ -63,19 +42,5 @@ const manifest = {
       { plugin: "./services" },
       { plugin: "./website", options: Config }
     ]
-  }
-}
-
-exports.compose = async () => {
-  try {
-    const srv = await Glue.compose(
-      manifest,
-      { relativeTo: rootDir }
-    )
-    await srv.initialize()
-    srv.log("info", "Server initialized")
-    return srv
-  } catch (error) {
-    throw error
   }
 }
